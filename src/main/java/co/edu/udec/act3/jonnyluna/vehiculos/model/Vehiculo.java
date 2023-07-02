@@ -7,6 +7,9 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 @Data
 @Entity
 @Table(name = "vehiculos")
@@ -38,7 +41,7 @@ public class Vehiculo {
     private String categoria;
     @JsonBackReference
     @ManyToOne(fetch= FetchType.LAZY)
-    @JoinColumn(name = "usuario_id",insertable=false, updatable=false)
+    @JoinColumn(name = "usuario_id")
     private Usuario usuario;
 
 

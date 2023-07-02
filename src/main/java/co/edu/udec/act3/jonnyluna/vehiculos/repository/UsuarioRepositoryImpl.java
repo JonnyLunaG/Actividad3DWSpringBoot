@@ -1,5 +1,7 @@
 package co.edu.udec.act3.jonnyluna.vehiculos.repository;
 
+import co.edu.udec.act3.jonnyluna.vehiculos.domain.request.UsuarioRequest;
+import co.edu.udec.act3.jonnyluna.vehiculos.domain.response.VehiculoResponse;
 import co.edu.udec.act3.jonnyluna.vehiculos.model.Usuario;
 import co.edu.udec.act3.jonnyluna.vehiculos.repository.dao.UsuarioDao;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +20,23 @@ public class UsuarioRepositoryImpl implements UsuarioRepository {
     }
 
     @Override
-    public void saveUser(Usuario usuario) {
-        Usuario saved = usuarioDao.save(usuario);
+    public List<VehiculoResponse> buscarVehiculosPorUsuario(Integer cedula) {
+        List<VehiculoResponse> vehiculoResponses = usuarioDao.buscarVehiculosPorUsuario(cedula);
+        return vehiculoResponses;
+    }
+
+    @Override
+    public Usuario guardarUsuario(Usuario usuario) {
+        return usuarioDao.save(usuario);
+    }
+
+    @Override
+    public Usuario buscarPorCedula(Integer cedula) {
+        return usuarioDao.findById(cedula).orElse(null);
+    }
+
+    @Override
+    public Usuario editarUsuario(Usuario usuarioAEditar) {
+        return usuarioDao.save(usuarioAEditar);
     }
 }

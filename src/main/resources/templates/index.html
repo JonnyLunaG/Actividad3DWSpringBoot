@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Welcome to our website!</h1>
+
+<p th:text="'Today is: ' + ${#dates.format(#dates.createNow(), 'dd MMMM yyyy')}"></p>
+
+</body>
+</html>

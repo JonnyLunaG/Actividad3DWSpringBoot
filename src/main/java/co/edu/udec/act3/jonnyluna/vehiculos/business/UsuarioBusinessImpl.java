@@ -1,8 +1,8 @@
 package co.edu.udec.act3.jonnyluna.vehiculos.business;
 
+import co.edu.udec.act3.jonnyluna.vehiculos.domain.response.VehiculoResponse;
 import co.edu.udec.act3.jonnyluna.vehiculos.model.Usuario;
 import co.edu.udec.act3.jonnyluna.vehiculos.repository.UsuarioRepository;
-import co.edu.udec.act3.jonnyluna.vehiculos.repository.UsuarioRepositoryImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,9 +17,13 @@ public class UsuarioBusinessImpl implements UsuarioBusiness {
         List<Usuario> result = usuarioRepository.findAllUsers();
         return result;
     }
-
     @Override
     public void saveUsuario(Usuario usuario) {
-        usuarioRepository.saveUser(usuario);
+        usuarioRepository.guardarUsuario(usuario);
+    }
+
+    @Override
+    public List<VehiculoResponse> consultarVehiculosPorUsuario(Integer cedula) {
+        return usuarioRepository.buscarVehiculosPorUsuario(cedula);
     }
 }

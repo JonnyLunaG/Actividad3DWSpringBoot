@@ -24,7 +24,7 @@ public class Usuario {
     private String apellido;
     @Column(name = "genero", nullable = false)
     private String genero;
-    @Column(name = "email", nullable = true, unique = true)
+    @Column(name = "email", unique = true)
     private String email;
     @JsonManagedReference
     @OneToMany(mappedBy = "usuario",fetch=FetchType.LAZY)

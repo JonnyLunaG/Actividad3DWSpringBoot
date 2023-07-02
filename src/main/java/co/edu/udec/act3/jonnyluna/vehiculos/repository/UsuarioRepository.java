@@ -1,10 +1,19 @@
 package co.edu.udec.act3.jonnyluna.vehiculos.repository;
 
+import co.edu.udec.act3.jonnyluna.vehiculos.domain.request.UsuarioRequest;
+import co.edu.udec.act3.jonnyluna.vehiculos.domain.response.VehiculoResponse;
 import co.edu.udec.act3.jonnyluna.vehiculos.model.Usuario;
 
 import java.util.List;
 
 public interface UsuarioRepository {
+    //1) Agregar usuario
+    Usuario guardarUsuario(Usuario usuario);
+    //2) Consultar usuario
+    Usuario buscarPorCedula(Integer cedula);
+    //3) Editar usuario
+    Usuario editarUsuario(Usuario usuarioAEditar);
+    //4) Listar usuarios
     List<Usuario> findAllUsers();
-    void saveUser(Usuario usuario);
+    List<VehiculoResponse> buscarVehiculosPorUsuario(Integer cedula);
 }
