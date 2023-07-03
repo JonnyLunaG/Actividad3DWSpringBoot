@@ -1,6 +1,5 @@
 package co.edu.udec.act3.jonnyluna.vehiculos.repository;
 
-import co.edu.udec.act3.jonnyluna.vehiculos.domain.request.UsuarioRequest;
 import co.edu.udec.act3.jonnyluna.vehiculos.domain.response.VehiculoResponse;
 import co.edu.udec.act3.jonnyluna.vehiculos.model.Usuario;
 

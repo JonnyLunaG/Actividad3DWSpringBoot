@@ -1,6 +1,5 @@
 package co.edu.udec.act3.jonnyluna.vehiculos.repository;
 
-import co.edu.udec.act3.jonnyluna.vehiculos.model.Usuario;
 import co.edu.udec.act3.jonnyluna.vehiculos.model.Vehiculo;
 import co.edu.udec.act3.jonnyluna.vehiculos.repository.dao.VehiculoDao;
 import org.springframework.beans.factory.annotation.Autowired;
