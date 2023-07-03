@@ -29,6 +29,19 @@ public class Usuario {
     @Column(name = "rol")
     private String rol;
     @JsonManagedReference
-    @OneToMany(mappedBy = "usuario",fetch=FetchType.LAZY)
+    @OneToMany(mappedBy = "usuario",fetch=FetchType.EAGER)
     private List<Vehiculo> vehiculos;
+
+    @Override
+    public String toString() {
+        return "Usuario{" +
+                "cedula=" + cedula +
+                ", clave='" + clave + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", apellido='" + apellido + '\'' +
+                ", genero='" + genero + '\'' +
+                ", email='" + email + '\'' +
+                ", rol='" + rol + '\'' +
+                '}';
+    }
 }

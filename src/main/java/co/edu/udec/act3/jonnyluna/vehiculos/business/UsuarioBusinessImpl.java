@@ -12,6 +12,7 @@ import java.util.List;
 public class UsuarioBusinessImpl implements UsuarioBusiness {
     @Autowired
     private UsuarioRepository usuarioRepository;
+
     @Override
     public List<Usuario> findAllUsers() {
         List<Usuario> result = usuarioRepository.findAllUsers();

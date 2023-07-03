@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public class UsuarioRepositoryImpl implements UsuarioRepository {
@@ -23,6 +24,11 @@ public class UsuarioRepositoryImpl implements UsuarioRepository {
     public List<VehiculoResponse> buscarVehiculosPorUsuario(Integer cedula) {
         List<VehiculoResponse> vehiculoResponses = usuarioDao.buscarVehiculosPorUsuario(cedula);
         return vehiculoResponses;
+    }
+
+    @Override
+    public Optional<Usuario> findByEmail(String email) {
+        return usuarioDao.findByEmail(email);
     }
 
     @Override
