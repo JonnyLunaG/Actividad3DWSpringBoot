@@ -26,6 +26,8 @@ public class Usuario {
     private String genero;
     @Column(name = "email", unique = true)
     private String email;
+    @Column(name = "rol")
+    private String rol;
     @JsonManagedReference
     @OneToMany(mappedBy = "usuario",fetch=FetchType.LAZY)
     private List<Vehiculo> vehiculos;
