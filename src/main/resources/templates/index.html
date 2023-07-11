@@ -2,12 +2,30 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Crud Vehículos</title>
 </head>
 <body>
-<h1>Welcome to our website!</h1>
+<h1>Vehículos</h1>
 
-<p th:text="'Today is: ' + ${#dates.format(#dates.createNow(), 'dd MMMM yyyy')}"></p>
+<nav>
+    <ul>
+        <li th:if="${username}">
+            ¡Bienvenido, <span th:text="${username}"></span>!
+        </li>
+        <li th:unless="${username}">
+            <a href="/login">Iniciar Sesión</a>
+        </li>
+        <li th:unless="${username}">
+            <a href="/registro">Registrarse</a>
+        </li>
+        <li th:if="${username}">
+            <a href="/vehiculos">Vehiculos</a>
+        </li>
+        <li th:if="${username}">
+            <a href="/logout">Cerrar Sesión</a>
+        </li>
+    </ul>
+</nav>
 
 </body>
 </html>

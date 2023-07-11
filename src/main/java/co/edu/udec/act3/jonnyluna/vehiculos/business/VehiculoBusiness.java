@@ -1,6 +1,8 @@
 package co.edu.udec.act3.jonnyluna.vehiculos.business;
 
+import co.edu.udec.act3.jonnyluna.vehiculos.domain.request.UpdatableVehicleRequest;
 import co.edu.udec.act3.jonnyluna.vehiculos.domain.request.VehiculoRequest;
+import co.edu.udec.act3.jonnyluna.vehiculos.domain.response.VehiculoResponse;
 import co.edu.udec.act3.jonnyluna.vehiculos.model.Vehiculo;
 
 import java.util.List;
@@ -10,15 +12,15 @@ public interface VehiculoBusiness {
     Vehiculo agregarVehiculo(VehiculoRequest vehiculoRequest);
 
     //2) Consultar vehículo
-    Vehiculo consultarPorPlaca(String placa);
+    VehiculoResponse consultarPorPlaca(String placa);
 
     //3) Editar vehículo
-    Vehiculo editarVehiculo(Vehiculo vehiculoAEditar);
+    Vehiculo editarVehiculo(UpdatableVehicleRequest updatableVehicleRequest);
 
     //4) Listar vehículos
     List<Vehiculo> listarVehiculos();
 
     //5) Eliminar vehículos
-    void eliminarVehiculo(Integer id);
+    void eliminarVehiculo(String placa);
 
 }

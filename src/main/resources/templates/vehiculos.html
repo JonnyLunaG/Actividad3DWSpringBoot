@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Vehiculos</title>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th>Placa</th>
+        <th>Marca</th>
+        <th>Modelo</th>
+        <th>Cilindraje</th>
+        <th>NumPuestos</th>
+        <th>Color</th>
+        <th>Acciones</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <a href="/index">index</a>
+    <tr th:each="vehiculo : ${vehiculos}">
+        <td th:text="${vehiculo.placa}"></td>
+        <td th:text="${vehiculo.marca}"></td>
+        <td th:text="${vehiculo.modelo}"></td>
+        <td th:text="${vehiculo.cilindraje}"></td>
+        <td th:text="${vehiculo.numPuestos}"></td>
+        <td th:text="${vehiculo.color}"></td>
+        <td>
+            <a th:href="@{'/formulario-actualizacion/' + ${vehiculo.placa}}">Editar</a>
+            <a th:href="@{'/eliminacion/' + ${vehiculo.placa}}">Eliminar</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
